@@ -14,7 +14,11 @@ libraryDependencies ++= Seq(
   "org.spire-math" %% "spire" % "0.9.1" ,
   "com.typesafe.akka" %% "akka-actor" % "2.3.11",
   "com.lihaoyi" %% "ammonite-ops" % "0.3.2",
-  "com.typesafe.play" %% "play-json" % "2.4.3"
+  "com.typesafe.play" %% "play-json" % "2.4.3",
+  "com.typesafe.akka" %% "akka-actor" % "2.4.0",
+ "org.apache.spark" %% "spark-core" % "1.5.1",
+ "org.apache.spark" %% "spark-sql" % "1.5.1"
+
 )
 
 libraryDependencies += "org.scala-lang" % "scala-reflect" % "2.11.1"
