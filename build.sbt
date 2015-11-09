@@ -12,7 +12,7 @@ resolvers += Resolver.sonatypeRepo("releases")
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies ++= Seq(
-  "com.chuusai" %% "shapeless" % "2.2.3",
+  "com.chuusai" %% "shapeless" % "2.2.5",
   "org.scalaz" %% "scalaz-core" % "7.1.1",
   "org.typelevel" %% "scalaz-spire" % "0.2",
   "com.twitter" %% "finagle-http" % "6.25.0",
