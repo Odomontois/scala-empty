@@ -6,11 +6,7 @@ object xxx {
   lazy val foo: () => String = {
     val pattern = Pattern.compile("pattern")
 
-    def result(): String = pattern
-
-    println("hello")
-
-    result _
+    () ⇒ pattern
   }
 
   def main(args: Array[String]) {
@@ -21,3 +17,4 @@ object xxx {
     println(xxx.foo())
   }
 }
+
