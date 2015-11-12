@@ -23,4 +23,3 @@ val oleg = User("odomontois", Info("Oleg", 23, List("python", "ABAP")))
 User.mainDept.getOption(oleg) == Some("python")
 (User.age.set(28) andThen User.mainDept.set("scala")) (oleg) ==
   User("odomontois",Info("Oleg",28,List("scala", "ABAP")))
-
