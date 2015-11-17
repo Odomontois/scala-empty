@@ -29,7 +29,6 @@ libraryDependencies ++= Seq(
   "com.github.julien-truffaut"  %%  "monocle-macro"   % monocleVersion,
   "com.github.julien-truffaut"  %%  "monocle-state"   % monocleVersion,
   "com.github.julien-truffaut"  %%  "monocle-law"     % monocleVersion % "test"
-
 )
 
 libraryDependencies += "org.scala-lang" % "scala-reflect" % "2.11.1"
@@ -43,3 +42,5 @@ dependencyOverrides ++= Set(
 )
 
 addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
+
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.7.1")
