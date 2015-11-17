@@ -48,13 +48,13 @@ def backSearch[N: Integral](start: N, target: N): ((Set[N], Boolean), Option[(N,
       (x > N.one, x - N.one),
       (x > two, x - two)
     ).collect { case (true, y) if !seen(y) ⇒ y }
-    (next.map((_, x :: way)), seen ++ next)
+    (next.map(y ⇒ (y, y :: way)), seen ++ next)
   }
   search[Set[N], (N, List[N])](
-    (start, Nil), Set.empty,
+    (start, List(start)), Set.empty,
     IterDef(
       (gen _).tupled,
       _._1 == target))
 }
 
-backSearch(30, 7) match {case ((set, found), elem) ⇒ (set.size, found, elem)}
+backSearch(300, 7) match {case ((set, _), elem) ⇒ (set.size, elem.map(_._2).getOrElse(Nil))}
