@@ -9,8 +9,9 @@ import scalaz.syntax.traverse._
 import scala.Integral.Implicits._
 import scala.Ordering.Implicits._
 
+import spire._
+import spire.syntax.literals.si._
 import Function.uncurried
-
 val LT = implicitly[MonadTrans[ListT]]
 type Store[I] = (I, Boolean)
 type SearchState[I, X] = State[Store[I], X]
@@ -44,11 +45,11 @@ def backSearch[N: Integral](start: N, target: N): ((Set[N], Boolean), Option[(N,
   val N = implicitly[Numeric[N]]
   val two = N.fromInt(2)
   def gen(x: N, way: List[N])(seen: Set[N]) = {
-    val next = List(
-      (x % two == N.zero, x / two),
-      (x > N.one, x - N.one),
-      (x > two, x - two)
-    ).collect { case (true, y) if !seen(y) ⇒ y }
+    val next =
+        (x % two == N.zero, x / two) ::
+      (x > N.one, x - N.one) ::
+        (x > two, x - two) ::
+        Nil collect { case (true, y) if !seen(y) ⇒ y }
     (next.map(y ⇒ (y, y :: way)), seen ++ next)
   }
   search[Set[N], (N, List[N])](
@@ -56,4 +57,6 @@ def backSearch[N: Integral](start: N, target: N): ((Set[N], Boolean), Option[(N,
     IterDef(uncurried((gen _).tupled), _._1 == target))
 }
 
-backSearch(300000000, 7) match {case ((set, _), elem) ⇒ (set.size, elem.map(_._2).getOrElse(Nil))}
+
+backSearch(123, 4) match {case ((set, _), elem) ⇒ (set.size, elem.map(_._2).getOrElse(Nil))}
+

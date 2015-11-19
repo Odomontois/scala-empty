@@ -1,4 +1,6 @@
 import akka.actor.{Stash, ActorRef, Actor}
+
+import scala.concurrent.Future
 object All {
   class Node extends Actor {
     import Node._
@@ -10,6 +12,8 @@ object All {
 
     }
   }
+
+  Future
 
 class Master extends Actor with Stash {
   import Master._
