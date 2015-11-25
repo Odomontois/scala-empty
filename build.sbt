@@ -18,8 +18,10 @@ libraryDependencies ++= Seq(
   "org.spire-math" %% "spire" % "0.9.1" ,
   "com.typesafe.akka" %% "akka-actor" % "2.3.11",
   "com.lihaoyi" %% "ammonite-ops" % "0.3.2",
-  "com.typesafe.play" %% "play-json" % "2.4.3",
-  "com.typesafe.akka" %% "akka-actor" % "2.4.0",
+  "com.typesafe.play" %% "play-json" % "2.4.4",
+  "com.typesafe.play" %% "play-iteratees" % "2.4.4",
+
+"com.typesafe.akka" %% "akka-actor" % "2.4.0",
 
   "org.apache.spark" %% "spark-core" % "1.5.1",
   "org.apache.spark" %% "spark-sql" % "1.5.1",
@@ -36,6 +38,8 @@ libraryDependencies += "org.scala-lang" % "scala-reflect" % "2.11.1"
 libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "2.0.0"
 
 libraryDependencies += "com.github.melrief" %% "purecsv" % "0.0.2"
+
+libraryDependencies += "org.parboiled" %% "parboiled" % "2.1.0"
 
 dependencyOverrides ++= Set(
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.4.4"
