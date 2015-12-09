@@ -10,6 +10,7 @@ import org.apache.spark.{SparkContext, SparkConf}
   */
 object Spark {
   val config = new SparkConf().setAppName("odo").setMaster("local[2]").set("spark.driver.host", "localhost")
-  val cs = new SparkContext(config)
-  val csl = new SQLContext(cs)
+  val sc = new SparkContext(config)
+  val sqlc = new SQLContext(sc)
+
 }

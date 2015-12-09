@@ -56,4 +56,6 @@ def runRes[X](e: Enumerator[Result[X]]) = Await.result(e.run(listResults), 3 sec
 runRes(good)
 runRes(bad)
 
+System.out
+
 

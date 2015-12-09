@@ -47,7 +47,7 @@ object UpdateIDs{
   def main(args: Array[String]) {
     import Spark._
 
-    val a = cs.parallelize(1 to 3 map Foo)
+    val a = sc.parallelize(1 to 3 map Foo)
 
     println(fooUpdateId(a).collect.toSeq)
   }

@@ -1,6 +1,7 @@
-import scalaz._
+val a = Some(List(1,1))
 
-import scalaz.std.list._
-import scalaz.syntax.traverse._
-
-List(1,2,3).mapAccumL()
+val u = for {
+  u <- a
+  List(y, _*) <- Some(u)
+  List(`y`, `y`) <- Some(u)
+} yield y
