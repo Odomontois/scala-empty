@@ -23,9 +23,9 @@ object CurrenciesMonocle {
   implicit case object EUR extends CurrencyUnit
 
   implicit class CurrencyOps[A](a: A) {
-    def GBP = Currency[A, GBP.type](a)
-    def EUR = Currency[A, EUR.type](a)
-    def USD = Currency[A, USD.type](a)
+    def GBP = Currency[A, CurrenciesMonocle.GBP.type](a)
+    def EUR = Currency[A, CurrenciesMonocle.EUR.type](a)
+    def USD = Currency[A, CurrenciesMonocle.USD.type](a)
   }
 
   implicit def currencyShow[A: Show, U <: CurrencyUnit](implicit unit: U) = new Show[Currency[A, U]] {

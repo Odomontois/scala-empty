@@ -71,6 +71,7 @@ object CountingApp {
       case Success(n: Int) => println(s" -> $n")
 
       case Failure(t) => println(t.getMessage)
+      case _ ⇒
     }
   }
 }
